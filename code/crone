@@ -1,0 +1,2 @@
+* * * * * ./upload_log.sh
+* * * * * ./log_to_s3.sh
