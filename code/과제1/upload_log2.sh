@@ -6,13 +6,12 @@ set -euo pipefail
 # --- 사용자 설정 ---
 # Discord 웹훅 URL. 스크립트 실행 전 환경 변수로 설정하는 것을 강력히 권장합니다.
 # 예: export DISCORD_WEBHOOK_URL='https://discord.com/api/webhooks/...'
-DISCORD_WEBHOOK_URL="https://discordapp.com/api/webhooks/1407245759073615995/GLeh_Eu5yazQVXBhD33wP3iTdLxyLj4b3CZ6xcJhp5kp8tETd9fpwr5i1CLvHwNewwvk"
+DISCORD_WEBHOOK_URL="https://discordapp.com/api/webhooks/"
 LOG_DIR="/home/ec2-user/" # 실제 로그 파일이 있는 디렉토리 경로
-S3_BUCKET=""
+S3_BUCKET="버킷명"
 HOSTNAME=$() # 알림에 서버 호스트명을 추가하여 구분
 
 # --- 1분 전 로그 파일 지정 ---
-# '2 minute ago' 대신 '1 minute ago'가 일반적이므로 수정했습니다. 필요시 다시 변경하세요.
 LOG_FILE_NAME="$(date --date='1 minute ago' +%Y%m%d-%H%M).log"
 FULL_LOG_PATH="$LOG_DIR/$LOG_FILE_NAME"
 
